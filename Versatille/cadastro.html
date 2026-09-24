@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Versatille</title>
+
+    <style>
+        /* Estilos do Formulário de Cadastro */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .steps-bar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #AF2767; /* Alterado para a mesma cor da barra de cima */
+            padding: 15px 30px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .step {
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .step span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .step-indicator {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step.active .step-indicator::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 40px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            padding: 12px 15px;
+            background-color: #f3ebed;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #666;
+            outline: none;
+        }
+
+        .input-group input::placeholder {
+            color: #aaa;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            border-top: 1px solid #ddd;
+            padding-top: 25px;
+        }
+
+        .btn-volte {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .btn-prosseguir {
+            background-color: #AF2767; /* Atualizado também para combinar com o tema */
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-prosseguir:hover {
+            background-color: #921f54;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+
+    <!--Barra de navegação-->
+    <header>
+        <nav style="background-color: #AF2767;
+        height: 5vh;
+        color: #fff;
+        padding: 1vh;">
+
+            <div style="display: grid;
+            grid-template-columns: auto auto auto auto;
+            align-items: center;
+            transform: translateY(-15px);" class="link">
+
+                 <!--Links de navegação-->
+                <a style="text-decoration: none;
+                color: #ffff;
+                margin-left: 50px;" href="#">
+                    <h1>VERSATILLE</h1> <!--Logo da nav-->
+                </a>
+
+                <a style="text-decoration: none;
+                color: #ffff;
+                margin-left: 50px;" href="/Versatille/sobre_versatille.html">Sobre o Versatille</a>
+
+                <a style="text-decoration: none;
+                color: #ffff;
+                margin-left: 50px;" href="/Versatille/guarda-roupa.html">Guarda-Roupa</a>
+
+                <!--Botão de entrar-->
+                <a style="border-radius: 10px;
+                background-color: #FFD8D3;
+                max-width: 15vh;
+                padding: 0.5vh;
+                text-align: center;
+                color: black; text-decoration: none;" href="/Versatille/login.html" id="entrar">Entrar</a>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Conteúdo do Cadastro (Logo abaixo do header) -->
+    <div class="container">
+        
+        <!-- Indicador de Etapas -->
+        <div class="steps-bar">
+            <div class="step active">
+                <span>Seus Dados</span>
+                <div class="step-indicator"></div>
+            </div>
+            <div class="step">
+                <span>Email e Senha</span>
+                <div class="step-indicator"></div>
+            </div>
+            <div class="step">
+                <span>Escolher Foto</span>
+                <div class="step-indicator"></div>
+            </div>
+            <div class="step">
+                <span>Concluído!</span>
+                <div class="step-indicator"></div>
+            </div>
+        </div>
+
+        <!-- Formulário de Dados -->
+        <form>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Insira o seu Nome">
+                </div>
+
+                <div class="input-group">
+                    <label>CPF</label>
+                    <input type="text" placeholder="Insira o seu CPF">
+                </div>
+
+                <div class="input-group">
+                    <label>RG</label>
+                    <input type="text" placeholder="Insira o seu RG">
+                </div>
+
+                <div class="input-group">
+                    <label>Data de Nascimento</label>
+                    <input type="text" placeholder="DD/MM/AA">
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="form-footer">
+                <button type="button" class="btn-volte">&#171; Volta</button>
+                <button type="submit" class="btn-prosseguir">Prosseguir</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+
+
