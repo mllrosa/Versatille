@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Versatille</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sirivennela:ital,wght@0,400&family=Special+Elite&display=swap"
+        rel="stylesheet">
+
+            <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sirivennela:ital,wght@0,400&family=Special+Elite&display=swap"
+        rel="stylesheet">
+
+    <!--ìcones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+
 </head>
 
 <body style="   margin: 0;
-padding: 0;">
+                padding: 0;">
 
     <!--Barra de navegação-->
     <header>
@@ -25,7 +44,7 @@ padding: 0;">
             align-items: center;
             transform: translateY(-15px);" class="link">
 
-                 <!--Links de navegação-->
+                <!--Links de navegação-->
                 <a style="    text-decoration: none;
                 color: #ffff;
                 margin-left: 50px;" href="#">
@@ -38,7 +57,7 @@ padding: 0;">
 
                 <a style="    text-decoration: none;
                 color: #ffff;
-                margin-left: 50px;" href="guarda-roupa.html">Guarda-Roupa</a>
+                margin-left: 50px;" href="/Versatille/guarda-roupa.html">Guarda-Roupa</a>
 
 
                 <!--Botão de entrar-->
@@ -55,417 +74,72 @@ padding: 0;">
 
         </nav>
     </header>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VERSATILLE - Login</title>
-    <!-- Font Awesome para os ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fontes do Google (Playfair Display / Serif e Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fcfcfc;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: #1a1a1a;
-        }
+    <main style="   display: grid;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    margin-top: 200px;">
 
-        /* ----- HEADER ----- */
-        .navbar {
-            background: linear-gradient(90deg, #5b0e2d 0%, #701138 50%, #4a0a24 100%);
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
+ 
+        <!-- Form Element -->
+        <form class="login-form" id="loginForm" novalidate>
 
-        .nav-left {
-            display: flex;
-            align-items: center;
-        }
+            <!-- Nome Input Group -->
 
-        .logo {
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
 
-        .nav-center {
-            display: flex;
-            gap: 35px;
-            align-items: center;
-        }
+            <div >
+                <span style="font-family: 'Instrument Serif', serif;" >Por favor, preencha o seu nome.</span>
 
-        .nav-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: opacity 0.2s ease;
-        }
+                <div style="margin-bottom: 1vh;">
+                    <!--<i class="fa-regular fa-user"></i>-->
+                    <input type="text" id="nomeInput" placeholder="Nome" autocomplete="username" required style="   border-radius: 10px;
+    padding: 1vh;
+    width: 50%;
 
-        .nav-link:hover {
-            opacity: 0.8;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-        }
-
-        .btn-entrar {
-            background-color: #d85c88;
-            color: #ffffff;
-            padding: 8px 24px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-entrar:hover {
-            background-color: #e56b97;
-            transform: translateY(-1px);
-        }
-
-        /* ----- CONTAINER PRINCIPAL ----- */
-        .main-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .login-card {
-            width: 100%;
-            max-width: 520px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .login-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 32px;
-            font-weight: 800;
-            color: #000000;
-            margin-bottom: 35px;
-            align-self: flex-start;
-            margin-left: 10px;
-        }
-
-        .login-form {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* ----- INPUTS ----- */
-        .input-box {
-            width: 100%;
-            height: 52px;
-            background-color: #611132;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .input-box:focus-within {
-            box-shadow: 0 0 0 2px #d85c88;
-        }
-
-        .input-box i {
-            color: #ffffff;
-            font-size: 20px;
-            margin-right: 18px;
-            width: 22px;
-            text-align: center;
-        }
-
-        .input-box input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 18px;
-            font-style: italic;
-        }
-
-        .input-box input::placeholder {
-            color: #ffffff;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 18px;
-            font-style: italic;
-            opacity: 0.95;
-        }
-
-        /* ----- LINHA DE OPÇÕES (TOGGLE + ESQUECEU A SENHA) ----- */
-        .options-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 5px;
-            padding: 0 5px;
-        }
-
-        .remember-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-        }
-
-        /* Switch Toggle estilizado */
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 44px;
-            height: 22px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ffffff;
-            border: 1.5px solid #d8829d;
-            transition: .3s;
-            border-radius: 22px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 14px;
-            width: 14px;
-            left: 3px;
-            bottom: 2.5px;
-            background-color: #d85c88;
-            transition: .3s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: #611132;
-            border-color: #611132;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(22px);
-            background-color: #ffffff;
-        }
-
-        .remember-label {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 17px;
-            color: #1a1a1a;
-        }
-
-        .forgot-link {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 17px;
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .forgot-link:hover {
-            color: #611132;
-            text-decoration: underline;
-        }
-
-        /* ----- BOTÃO DE LOGIN ----- */
-        .btn-submit {
-            width: 100%;
-            height: 44px;
-            background-color: #611132;
-            color: #ffffff;
-            border: none;
-            border-radius: 12px;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-submit:hover {
-            background-color: #79163e;
-            transform: translateY(-1px);
-        }
-
-        /* ----- LINK CADASTRAR CONTA ----- */
-        .register-container {
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        .register-link {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 16px;
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .register-link:hover {
-            color: #611132;
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0 20px;
-            }
-
-            .nav-center {
-                display: none; /* Oculta os links do meio em telas muito pequenas */
-            }
-
-            .login-card {
-                max-width: 100%;
-            }
-
-            .options-row {
-                flex-direction: row;
-                gap: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="#" class="logo">VERSATILLE</a>
-        </div>
-        
-        <nav class="nav-center">
-            <a href="#" class="nav-link">SOBRE O VERSATILLE</a>
-            <a href="#" class="nav-link">GUARDA-ROUPA</a>
-        </nav>
-
-        <div class="nav-right">
-            <a href="#" class="btn-entrar">ENTRAR</a>
-        </div>
-    </header>
-
-    <!-- CONTEÚDO PRINCIPAL DE LOGIN -->
-    <main class="main-container">
-        <div class="login-card">
-            
-            <h1 class="login-title">Login</h1>
-
-            <form class="login-form" onsubmit="event.preventDefault();">
-                <!-- CAMPO NOME -->
-                <div class="input-box">
-                    <i class="fa-regular fa-user"></i>
-                    <input type="text" placeholder="Nome" required>
+    background-color: #af2767;
+    color: #fff;">
                 </div>
-
-                <!-- CAMPO SENHA -->
-                <div class="input-box">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Senha" required>
-                </div>
-
-                <!-- LINHA COM TOGGLE E ESQUECEU A SENHA -->
-                <div class="options-row">
-                    <label class="remember-group">
-                        <span class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="remember-label">Lembrar senha</span>
-                    </label>
-
-                    <a href="#" class="forgot-link">Esqueceu a senha</a>
-                </div>
-
-                <!-- BOTÃO SUBMIT -->
-                <button type="submit" class="btn-submit">Login</button>
-            </form>
-
-            <!-- RODAPÉ CADASTRAR CONTA -->
-            <div class="register-container">
-                <a href="#" class="register-link">Cadastrar Conta</a>
             </div>
 
-        </div>
+
+
+            <!-- Senha Input Group -->
+
+            <div class="input-box" id="senhaBox">
+                <span style="font-family: 'Instrument Serif', serif;">Por favor, insira sua senha.</span>
+                <div style="margin-bottom: 5vh;">
+
+
+                    <!--<i class="fa-solid fa-lock"></i>-->
+                    <input type="password" id="senhaInput" placeholder="Senha" autocomplete="current-password" required style="   border-radius: 10px;
+    padding: 1vh;
+    width: 50%;
+
+    background-color: #af2767;
+    color: #fff;">
+                </div>
+            </div>
+
+
+            <!-- Submit Button -->
+            <input type="submit" value="Entrar" style="   border-radius: 10px;
+    padding: 1vh;
+    width: 50%;
+
+    background-color: #af2767;
+    color: #fff;">
+
+            </input>
+
+            
+
+        </form>
+        <a style="      padding-top: 5vh;
+
+        text-decoration: none;" href="">Não tem conta? Cadastre-se agora! </a>
+
     </main>
 
-</body>
-</html>
+    </body>
 
-    <!--Rodapé-->
-    <footer style="    background-color: #AF2767;
-                        margin-top: 20vh;
-                        height: 35vh;">
-
-                <!--Links de navegação-->
-                    <a style="    text-decoration: none;
-                    color: #ffff;
-                    margin-left: 50px;" href="index.html">
-                    <h1 align="center">VERSATILLE</h1> <!--Logo da nav-->
-                </a>
-
-        <!--Adicionando imagem do footer rodape.jpg -->
-        <div style="    display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: 5vh;">
-            <img src="IMG/rodape2.png" style="    width: 100%;
-                                                    max-height: 50%;">
-                
-
-    </footer>
-
-</body>
-
-</html>
+    </html>
